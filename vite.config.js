@@ -6,5 +6,5 @@ export default defineConfig({
   plugins: [vue()],
   build: {outDir: 'docs'},
 
-  base: process.env.NODE_ENV === 'production' ? '/final_lab_melissa/' : '/'
+  base: process.env.NODE_ENV === 'production' ? '/Final_Lab_Melissa/' : '/'
 })
