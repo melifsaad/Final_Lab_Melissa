@@ -17,7 +17,7 @@
                 </div>
                 <div class="field">
                     <div class="control">
-                        <input class="buttonprimary is-link" type="submit" placeholder="Ingresar">
+                        <input class="button is-primary" type="submit" placeholder="Ingresar">
                     </div>
                 </div>
                 <div class="olvidoContraseña">
@@ -40,7 +40,7 @@ const email = ref('');
 const password = ref('');
 
 const onSubmit = () => {
-authStore.logIn(email.value, password.value)
+    logIn(email.value, password.value)
 }
 
 </script>
