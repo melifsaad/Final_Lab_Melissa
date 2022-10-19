@@ -1,23 +1,30 @@
 <template>
-  <h1>Task</h1>
-  <ul>
+
+  <!-- <ul>
     <li>
-      <router-link :to="{name: 'home'}"> Home </router-link>
+      <router-link :to="{name: 'inicio'}"> Home </router-link>
     </li>
     <li>
       <router-link :to="{name: 'login'}"> Login </router-link>
     </li>
-  </ul>
+  </ul> -->
   <router-view></router-view>
 </template>
 <script setup>
+import {onMounted} from 'vue';
+import { logIn, newTask} from  './supabase'
 
+onMounted (async () => {
+  // const id= await logIn ('meli.fsaad@gmail.com', 'TaskLab');
+  // newTask({
+  //   user_id: id,
+  //   title: 'Titulo',
+  //   description: 'Descripcion de otro task'
+  // })
+// console.log (id)
+})
 
-import { createClient } from '@supabase/supabase-js'
-
-const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_KEY)
-console.log (supabase)
-console.log (process.env.NODE_ENV)
 </script>
 <style scoped>
+
 </style>

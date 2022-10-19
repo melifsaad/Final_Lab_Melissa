@@ -1,8 +1,13 @@
 <template>
-     <div class="section">
+    <div class="section">
         <div class="container">
-            <h1>!Hola!</h1>
             <form @submit.prevent="onSubmit">
+                <div class="field">
+                    <label class="label">name</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Email corporativo o personal">
+                    </div>
+                </div>
                 <div class="field">
                     <label class="label">Email</label>
                     <div class="control">
@@ -16,20 +21,20 @@
                     </div>
                 </div>
                 <div class="field">
+                    <label class="label">Telefono</label>
+                    <div class="control">
+                        <input v-model="phone" class="input" type="tel" placeholder="telefono">
+                    </div>
+                </div>
+                <div class="field">
                     <div class="control">
                         <input class="buttonprimary is-link" type="submit" placeholder="Ingresar">
                     </div>
-                </div>
-                <div class="olvidoContraseña">
-                    <router-link :to="{name: ''}">
-                        No recuerdo mi contraseña
-                    </router-link>
                 </div>
             </form>
         </div>
     </div>
 </template>
-
 <script setup>
 import { ref } from 'vue';
 import { useAuthStore } from '../store/auth';
@@ -38,12 +43,12 @@ import { logIn } from '../supabase/index';
 const authStore = useAuthStore();
 const email = ref('');
 const password = ref('');
+const phone = ref('');
 
 const onSubmit = () => {
-authStore.logIn(email.value, password.value)
+authStore.registro(email.value, password.value)
 }
-
 </script>
-
 <style scoped>
+
 </style>
