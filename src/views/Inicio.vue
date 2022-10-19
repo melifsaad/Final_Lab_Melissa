@@ -1,19 +1,19 @@
 <template>
     <div class="section">
         <div class="container">
-        <article v-if="!authStore.isAuth" class="message is-danger">
-            <div class="message-body">
-                Debes iniciar sesion para utilizar la aplicación
+            <article v-if="!authStore.isAuth" class="message is-danger">
+                <div class="message-body">
+                    Debes iniciar sesion para utilizar la aplicación
+                </div>
                 <router-link :to="{name: 'login'}">
-                    <button>Ir a Login</button>
-                    </router-link>
-                    <router-link :to="{name: 'signup'}">
-                        <button>Registrarse</button> 
-                    </router-link>
-            </div>
-        </article>
+                    <button class="button is-primary">Ingresar</button>
+                </router-link>
+                <router-link :to="{name: 'signup'}">
+                    <button class="button is-secondary">Registrarse</button>
+                </router-link>
+            </article>
+        </div>
     </div>
-</div>
 </template>
 
 <script setup>
@@ -23,6 +23,8 @@ const authStore = useAuthStore();
 
 <style scoped>
 .section {
-    background-image: '../images/Gamevut elementos_background.png';
+    background-color: blue;
+    height: 100vh;
+    /* background-image: '../images/Gamevut elementos_background.png'; */
 }
 </style>

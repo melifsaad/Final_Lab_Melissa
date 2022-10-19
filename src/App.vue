@@ -1,14 +1,5 @@
 <template>
-
-  <!-- <ul>
-    <li>
-      <router-link :to="{name: 'inicio'}"> Home </router-link>
-    </li>
-    <li>
-      <router-link :to="{name: 'login'}"> Login </router-link>
-    </li>
-  </ul> -->
-  <router-view></router-view>
+ <router-view></router-view>
 </template>
 <script setup>
 import {onMounted} from 'vue';

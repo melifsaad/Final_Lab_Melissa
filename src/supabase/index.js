@@ -23,6 +23,7 @@ export const logIn = async (email, password) => {
   return response.data.user.id;
 };
 
+
 export const newTask = async (task) => {
   const response = await supabase.from("task")
   .insert(task);

@@ -32,15 +32,18 @@
 
 <script setup>
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 import { useAuthStore } from '../store/auth';
 import { logIn } from '../supabase/index';
 
-const authStore = useAuthStore();
+const router = useRouter();
+// const authStore = useAuthStore();
 const email = ref('');
 const password = ref('');
 
 const onSubmit = () => {
-    logIn(email.value, password.value)
+    const id=logIn(email.value, password.value);
+    if (id) router.push({ name: 'task' })
 }
 
 </script>

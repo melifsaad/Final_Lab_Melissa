@@ -16,6 +16,16 @@ const routes = [
     name: "signup",
     component: () => import("../views/SignUp.vue")
   },
+  {
+    path: "/verificacion",
+    name: "verificacion",
+    component: () => import("../views/Verificacion.vue")
+  },
+  {
+    path: "/task",
+    name: "task",
+    component: () => import("../views/TaskHome.vue")
+  },
 ]
 
 const router = createRouter({

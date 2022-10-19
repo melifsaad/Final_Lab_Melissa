@@ -4,8 +4,9 @@ export const useAuthStore = defineStore("auth", {
   state: () => ({
     isAuth: false,
     user: {
+      name:"",
       email: "",
-      password: "",
+      // password: "",
     },
 
     //Guardaremos el id de supabase que nos dara al hacer el login

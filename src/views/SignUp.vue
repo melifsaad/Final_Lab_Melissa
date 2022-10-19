@@ -3,6 +3,12 @@
         <div class="container">
             <form @submit.prevent="onSubmit">
                 <div class="field">
+                    <label class="label">Nombre</label>
+                    <div class="control">
+                        <input v-model="name" class="input" type="text" placeholder="Email corporativo o personal">
+                    </div>
+                </div>
+                <div class="field">
                     <label class="label">Email</label>
                     <div class="control">
                         <input v-model="email" class="input" type="email" placeholder="Email corporativo o personal">
@@ -25,7 +31,9 @@
                     <div class="control">
                         <input class="buttonprimary is-link" type="submit" placeholder="Registrarse">
                         <span>o</span>
-                        <button class="">cancelar</button>
+                        <router-link :to="{name: 'login'}">
+            <button class="button is-primary">cancelar</button>
+        </router-link>
                     </div>
                 </div>
             </form>
@@ -40,13 +48,14 @@ import { useRouter } from 'vue-router'
 
 const router = useRouter();
 const authStore = useAuthStore();
+const name = ref('');
 const email = ref('');
 const password = ref('');
 const phone = ref('');
 
 const onSubmit = () => {
     registro(email.value, password.value);
-    router.push({ name: 'inicio' })
+    router.push({ name: 'verificacion' })
 }
 </script>
 <style scoped>
