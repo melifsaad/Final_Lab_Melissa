@@ -16,11 +16,13 @@ export const registro = async (email, password) => {
 //TODO identificar el result y retornar lo que nos interesa
 
 export const logIn = async (email, password) => {
-  const response = await supabase.auth.signInWithPassword({
+  const { data, error }
+  = await supabase.auth.signInWithPassword({
     email,
     password,
   });
-  return response.data.user.id;
+  if (error) return false
+  return data.user.id;
 };
 
 

@@ -4,8 +4,8 @@ export const useAuthStore = defineStore("auth", {
   state: () => ({
     isAuth: false,
     user: {
-      name:"",
-      email: "",
+      name:"mel",
+      id: "",
       // password: "",
     },
 
@@ -15,9 +15,9 @@ export const useAuthStore = defineStore("auth", {
   }),
 
   actions: {
-    logIn(email, password) {
+    logIn(id) {
       this.isAuth = true;
-      this.user.email = email;
+      this.user.id = id;
     },
   },
 });

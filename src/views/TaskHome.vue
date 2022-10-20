@@ -7,7 +7,17 @@
 <script setup>
 import Navbar from '../components/navbar.vue';
 import { useAuthStore } from '../store/auth';
-const authStore = useAuthStore();
+
+const authStore = useAuthStore(
+    // name: String
+);
+
+// import {defineProps} from 'vue'
+
+// const props = defineProps({
+//     name: String
+// })
+
 </script>
 
 <style scoped>
