@@ -1,27 +1,25 @@
 <template>
-        <navbar />
-    <div class="title">Bienvenido</div>
+    <navbar />    
+    <div class="title">Bienvenid@</div>
     <h1>{{authStore.user.name}}</h1>
+    <router-view></router-view>
+    <taskCard />
 </template>
 
 <script setup>
-import Navbar from '../components/navbar.vue';
+import navbar from '../components/navbar.vue';
+import taskCard from '../components/taskCard.vue';
 import { useAuthStore } from '../store/auth';
 
 const authStore = useAuthStore(
-    // name: String
+    //{name: String} 
 );
 
-// import {defineProps} from 'vue'
-
-// const props = defineProps({
-//     name: String
-// })
 
 </script>
 
 <style scoped>
-.title{
-color:#167275
+.title {
+    color: #167275
 }
 </style>
