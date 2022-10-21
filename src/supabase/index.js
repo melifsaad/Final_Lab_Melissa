@@ -37,9 +37,10 @@ export const newTask = async (task) => {
 export const getTasks = async () => {
   const response = await supabase
     .from("task")
-    .select("title, description")
+    .select("*")
     .order("id", { ascending: false });
   console.log(response);
+  return response.data
 };
 
 //TODO retornar la informacion de los task, ej: response.data
@@ -65,6 +66,9 @@ export const deleteTask = async (taskId) => {
 
 export const logOut = async () => {
   const response = await supabase.auth.signOut();
-
-  console.log(response);
+  if (response.error){
+    console.log('ha habido un problema con el logOut');
+    return false
+  }
+return true
 };

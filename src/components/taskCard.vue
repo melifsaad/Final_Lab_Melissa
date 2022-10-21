@@ -1,7 +1,7 @@
 <template>
   <div class="sectiontaskCard">
     <h2>Espacio de trabajo</h2>
-    <div class="card">
+    <div v-if="!show" class="card">
       <header class="card-header">
         <p class="card-header-title">Tarea</p>
       </header>
@@ -14,15 +14,14 @@
               <textarea v-model="description" class="textarea" placeholder="Descripcion"></textarea>
             </div>
           </div>
-          <div class="field">
-            <div class="control">
-              <input class="button is-primary" type="submit" value="Agregar" />
-              <button class="button is-secondary">Cancelar</button>
-            </div>
-          </div>
-          <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
         </div>
       </form>
+      <div class="field">
+            <div class="control">
+              <input class="button is-primary" type="submit" value="Agregar Tarea" />
+              <button @click="onClick()" v-if="!show" class="button is-secondary">Cancelar</button>
+            </div>
+          </div>
     </div>
 
     <div class="botonesnavegacion">
@@ -34,7 +33,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, shallowReactive } from "vue";
 import { useAuthStore } from "../store/auth"
 import { newTask } from "../supabase/index.js"
 
@@ -48,6 +47,10 @@ const onSubmit = () => {
   }
     newTask(task)
 }
+
+// const onClick = () => {
+//   show.value = !show.value
+// }
 // }
 
 </script>
@@ -63,12 +66,15 @@ const onSubmit = () => {
 }
 
 .card {
-  background-color: blueviolet;
   width: 400px;
   padding: 15px;
   margin: 20px;
+  box-shadow: #00000080 0 14px 28px, #00000080 0 10px 10px;
 }
 
+.card-header-title{
+  color: blueviolet;
+}
 .botonesnavegacion {
   background-color: coral;
   margin: 50px;

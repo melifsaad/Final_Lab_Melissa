@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import { newTask } from "../supabase";
+import { getTasks, newTask } from "../supabase";
 
 export const useTaskStore = defineStore("task", {
   state: () => {
@@ -8,8 +8,9 @@ export const useTaskStore = defineStore("task", {
     };
   },
   actions: {
-    setTask(task) {
-      this.tasks = task
+    async setTask() {
+     this.tasks = await getTasks()
+      console.log (this.tasks)
     },
 
     updateTask(id, task) {
@@ -21,7 +22,14 @@ export const useTaskStore = defineStore("task", {
       //TODO modificar el estado borrando ese task
       //Encontramos el indice de ese id y eliminamos ese indice de la array
     },
-    addTask(task) {
+    addTask(title, description) {
+      const task = {
+        id: this.tasks.length + 1,
+        title,
+        description,
+      }
+      this.tasks.push(task);
+
       //TODO modificar el estado de la task haciendo un push de la task
       //Comprobar que tenemos el id al insertar el registro, en caso de no tenerlo tendríamos que hacer el getTask
     },

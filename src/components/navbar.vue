@@ -55,12 +55,16 @@
 <script setup>
 import { useRouter } from "vue-router";
 import { useAuthStore } from '../store/auth';
+import { logOut } from '../supabase/index'
 
 const router = useRouter();
 const authStore = useAuthStore();
 
-const onClick = () => {
-    router.push({ name: 'inicio' })
+const onClick = async () => {
+const response = await logOut()
+if (response)
+{authStore.logout()
+    router.push({ name: 'inicio' })}
 }
 
 </script>

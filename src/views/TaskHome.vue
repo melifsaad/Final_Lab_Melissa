@@ -3,10 +3,10 @@
     <div class="title">Bienvenid@
         <p>{{authStore.user.name}}</p>
     </div>
-    <router-view></router-view>
     <taskCard />
-    <newTask />
-    <!-- v-for -->
+    <div v-for="elementTask in taskStore.tasks">
+        <newTask :task = "elementTask" />
+    </div>
 </template>
 
 <script setup>
@@ -14,12 +14,13 @@ import navbar from '../components/navbar.vue';
 import taskCard from '../components/taskCard.vue';
 import newTask from '../components/newTask.vue';
 import { useAuthStore } from '../store/auth';
-import { useTaskStore } from "../store/task.js";
+import { useTaskStore } from '../store/task';
 
 const authStore = useAuthStore(
     //{name: String} 
 );
 const taskStore = useTaskStore();
+taskStore.setTask();
 
 </script>
 
