@@ -1,15 +1,15 @@
 import { defineStore } from "pinia";
+import { newTask } from "../supabase";
 
 export const useTaskStore = defineStore("task", {
   state: () => {
     return {
-      //Guardaremos los task que nos de supabase
       tasks: [],
     };
   },
   actions: {
-    setTask() {
-      //TODO Guardar en el estado que nos de supabase
+    setTask(task) {
+      this.tasks = task
     },
 
     updateTask(id, task) {

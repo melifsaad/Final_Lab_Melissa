@@ -9,7 +9,6 @@
       <router-link class="help" :to="{ name: '' }">
         Ayuda
       </router-link>
-
     </div>
   </footer>
 </template>
@@ -20,12 +19,15 @@
 <style scoped>
 .footer {
   background-color: #12A19A;
-  height: 48px;
+  height: 120px;
+  padding: 15px;
 }
 
 .content {
-  background-color: brown;
+  background-color: rgb(0, 58, 96);
+  height: 100px;
   display: flex;
+  justify-content: space-between;
 }
 
 .terminosycondiciones {

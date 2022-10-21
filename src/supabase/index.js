@@ -37,7 +37,7 @@ export const newTask = async (task) => {
 export const getTasks = async () => {
   const response = await supabase
     .from("task")
-    .select("*")
+    .select("title, description")
     .order("id", { ascending: false });
   console.log(response);
 };
