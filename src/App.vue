@@ -5,18 +5,18 @@
 </template>
 <script setup>
 import {onMounted} from 'vue';
+import {useAuthStore} from './store/auth'
+import {useRouter} from 'vue-router'
 // import { logIn, newTask} from  './supabase'
 import footerMain from './components/footerMain.vue'
 
-// onMounted (async () => {
-//   const id= await logIn ('meli.fsaad@gmail.com', 'TaskLab');
-//   newTask({
-//     user_id: id,
-//     title: 'Titulo',
-//     description: 'Descripcion de otro task'
-//   })
-// console.log (id)
-// })
+const authStore = useAuthStore();
+const router = useRouter();
+
+onMounted (async () => {
+ if (!authStore.isAuth)
+ router.push({name:"login"})
+})
 
 </script>
 

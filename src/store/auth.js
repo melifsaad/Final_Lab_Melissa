@@ -23,4 +23,14 @@ export const useAuthStore = defineStore("auth", {
       this.user.email = '';
      }
   },
+
+  persist: {
+    enabled: true,
+    strategies: [
+      {
+        key: 'auth',
+        storage: localStorage,
+      },
+    ],
+  },
 });

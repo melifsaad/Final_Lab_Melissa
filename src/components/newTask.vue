@@ -4,34 +4,47 @@
     <p class="card-header-title">
       {{props.task.title}}
     </p>
-    <button class="card-header-icon" aria-label="more options">
-      <span class="icon">
-        <i class="fas fa-angle-down" aria-hidden="true"></i>
-      </span>
-    </button>
+    <input v-if="show" class="input" type="text" placeholder="titulo"/>
   </header>
+
   <div class="card-content">
     <div class="content">
       {{props.task.description}}
     </div>
+    <input v-if="show" class="input" type="text" placeholder="description"/>
   </div>
   <footer class="card-footer">
-    <button class="button">Edit</button>
-    <button class="button is-primary">Delete</button>
-    <button  class="button">Haciendo</button>
+    <button @click="onClickEdit" class="button">Edit</button>
+    <button @click="onClickDelete" class="button is-primary">Delete</button>
+    <button class="button">Haciendo</button>
   </footer>
 </div>
+
+
 </template>
 
 <script setup>
-import {defineProps} from 'vue'
-const props = defineProps({task:Object})
+import {defineProps} from 'vue';
+import {useTaskStore} from '../store/task';
 
+const taskStore = useTaskStore();
+
+const props = defineProps({task:Object})
+console.log(props.task)
+
+
+const onClickDelete = () => {
+  taskStore.deleteTaskStore(props.task.id)
+  console.log(props.task.id)
+}
+
+const onClickEdit = () => {
+  show.value = !show.value;
+}
 </script>
 
 <style scoped>
 .card {
-  color: white;
   width: 400px;
   padding: 15px;
   margin: 50px;

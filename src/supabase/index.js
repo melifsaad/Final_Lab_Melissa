@@ -43,13 +43,11 @@ export const getTasks = async () => {
   return response.data
 };
 
-//TODO retornar la informacion de los task, ej: response.data
-
 export const updateTask = async (taskId, task) => {
   const response = await supabase
   .from("task")
   .update(task)
-  .eq("id", "taskId");
+  .eq("id", taskId);
 
   //TODO identificar el resultado y retornar lo que nos interesa, ej: true si ha ido bien, false si ha fallado
   console.log(response);
@@ -59,8 +57,7 @@ export const deleteTask = async (taskId) => {
   const response = await supabase
   .from("task")
   .delete()
-  .eq("id", "taskId");
-  //TODO identificar el resultado y retornar lo que nos interesa, ej: true si ha ido bien, false si ha fallado
+  .eq("id", taskId);
   console.log(response);
 };
 
