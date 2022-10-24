@@ -49,7 +49,7 @@
 </template>
 
 <script setup>
-import { ref, shallowReactive } from "vue";
+import { ref } from "vue";
 import { useAuthStore } from "../store/auth";
 import { newTask } from "../supabase/index.js";
 import {useTaskStore} from "../store/task"

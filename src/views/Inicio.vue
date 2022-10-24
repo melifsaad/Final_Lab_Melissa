@@ -23,7 +23,6 @@ const authStore = useAuthStore();
 
 <style scoped>
 .section {
-    background-color: blue;
     height: 100vh;
     /* background-image: '../images/Gamevut elementos_background.png'; */
 }

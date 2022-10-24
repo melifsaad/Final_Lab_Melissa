@@ -1,5 +1,6 @@
 import { createClient } from "@supabase/supabase-js";
 
+
 const supabase = createClient(
   import.meta.env.VITE_SUPABASE_URL,
   import.meta.env.VITE_SUPABASE_KEY
@@ -12,8 +13,6 @@ export const registro = async (email, password) => {
   });
   console.log(response);
 };
-
-//TODO identificar el result y retornar lo que nos interesa
 
 export const logIn = async (email, password) => {
   const { data, error }
@@ -32,8 +31,6 @@ export const newTask = async (task) => {
   console.log(response);
 };
 
-//TODO identificar el result y retornar lo que necesitamos ej: true si se ha insertado el registro y false si no
-
 export const getTasks = async () => {
   const response = await supabase
     .from("task")
@@ -48,8 +45,6 @@ export const updateTask = async (taskId, task) => {
   .from("task")
   .update(task)
   .eq("id", taskId);
-
-  //TODO identificar el resultado y retornar lo que nos interesa, ej: true si ha ido bien, false si ha fallado
   console.log(response);
 };
 

@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import { getTasks, newTask, deleteTask, updateTask } from "../supabase";
+import { getTasks, deleteTask, updateTask } from "../supabase";
 
 export const useTaskStore = defineStore("task", {
   state: () => {
@@ -13,9 +13,10 @@ export const useTaskStore = defineStore("task", {
       console.log(this.tasks);
     },
 
-    updateTask(id, taskEdit) {
-const newArray = this.tasks(id)
-this.tasks[newArray]
+    async updateTask(id, taskEdit) {
+await updateTask(id);
+this.tasks = await getTasks();
+console.log("store", id, taskEdit)
     },
 
     async deleteTaskStore(id) {
@@ -23,7 +24,7 @@ this.tasks[newArray]
       await deleteTask(id);
       //Recoge las tareas de supabase y las guarda en store
       this.tasks = await getTasks();
-      console.log("store", id)
+      // console.log("store", id)
     },
 
     addTask(title, description) {
