@@ -4,7 +4,7 @@ const routes = [
   {
     path: "/",
     name: "inicio",
-    component: () => import("../views/TaskHome.vue")
+    component: () => import("../views/Inicio.vue")
   },
   {
     path: "/login",

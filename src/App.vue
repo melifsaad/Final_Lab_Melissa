@@ -15,8 +15,8 @@ const router = useRouter();
 
 onMounted (async () => {
  if (!authStore.isAuth)
- router.push({name:"login"})
- 
+ router.push({name:"inicio"})
+ else router.push({name:"task"})
 })
 
 </script>
