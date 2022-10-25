@@ -90,7 +90,8 @@ const onSubmitEdit = async () => {
   padding: 15px;
   margin: 50px;
   box-shadow: #00000080 0 14px 28px, #00000080 0 10px 10px;
-}
+  border-radius: 10px;
+} 
 
 .card-footer-item {
 color: white;

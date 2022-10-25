@@ -29,7 +29,7 @@
 
         <div class="navbar-brand">
             <router-link class="navbar-item" :to="{name: task}">
-                <img src="../images/Gamevut_logotipo.png" width="80" height="20">
+                <img class="logoNavbar" src="../images/Gamevut_logotipo.png" width="80" height="20">
             </router-link>
 
             <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
@@ -64,7 +64,7 @@ const onClick = async () => {
 const response = await logOut()
 if (response)
 {authStore.logout()
-    router.push({ name: 'inicio' })}
+    router.push({ name: 'login' })}
 }
 
 </script>
@@ -75,4 +75,9 @@ if (response)
     top: 0px;
     box-shadow: #00000080 0 14px 28px, #00000080 0 10px 10px;
 }
+
+.logoNavbar{
+    object-fit: contain;
+}
+
 </style>

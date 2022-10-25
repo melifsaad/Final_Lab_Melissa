@@ -12,6 +12,7 @@
                     <button class="button is-secondary">Registrarse</button>
                 </router-link>
             </article>
+            inicio
         </div>
     </div>
 </template>
@@ -19,6 +20,7 @@
 <script setup>
 import { useAuthStore } from '../store/auth'
 const authStore = useAuthStore();
+console.log("inicio")
 </script>
 
 <style scoped>

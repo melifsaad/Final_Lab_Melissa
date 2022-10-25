@@ -1,8 +1,8 @@
 <template>
  <router-view></router-view>
  <footerMain />
-
 </template>
+
 <script setup>
 import {onMounted} from 'vue';
 import {useAuthStore} from './store/auth'
@@ -16,6 +16,7 @@ const router = useRouter();
 onMounted (async () => {
  if (!authStore.isAuth)
  router.push({name:"login"})
+ 
 })
 
 </script>

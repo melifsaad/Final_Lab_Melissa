@@ -88,8 +88,13 @@ const onClick = () => {
   padding: 15px;
   margin: 20px;
   box-shadow: #00000080 0 14px 28px, #00000080 0 10px 10px;
+border-radius: 10px;
+transition: 300ms;
 }
 
+.card:hover {
+  transform: scale(1.1);
+}
 .card-header-title {
   color: blueviolet;
 }

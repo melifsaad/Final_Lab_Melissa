@@ -20,7 +20,7 @@ export const useAuthStore = defineStore("auth", {
     logout(){
       this.isAuth = false;
       this.user.name = '';
-      this.user.email = '';
+      this.user.id = '';
      }
   },
 
