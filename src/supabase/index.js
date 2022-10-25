@@ -40,12 +40,12 @@ export const getTasks = async () => {
   return response.data
 };
 
-export const updateTask = async (taskId, task) => {
-  const response = await supabase
+export const updateTask = async (taskId, title, description) => {
+  const { data, error } = await supabase
   .from("task")
-  .update(task)
+  .update(title, description)
   .eq("id", taskId);
-  console.log(response);
+  console.log( data, error );
 };
 
 export const deleteTask = async (taskId) => {

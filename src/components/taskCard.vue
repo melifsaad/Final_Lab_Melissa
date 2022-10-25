@@ -11,27 +11,14 @@
         <div class="content">
           <div class="field">
             <div class="control">
-              <input
-                v-model="title"
-                class="input"
-                type="text"
-                placeholder="titulo"
-              />
-              <textarea
-                v-model="description"
-                class="textarea"
-                placeholder="Descripcion"
-              ></textarea>
+              <input v-model="title" class="input" type="text" placeholder="titulo" />
+              <textarea v-model="description" class="textarea" placeholder="Descripcion"></textarea>
             </div>
           </div>
         </div>
         <div class="field">
           <div class="control">
-            <input
-              class="button is-primary"
-              type="submit"
-              value="Agregar Tarea"
-            />
+            <input class="button is-primary" type="submit" value="Agregar Tarea" />
             <button @click="onClick()" class="button is-secondary">
               Cancelar
             </button>
@@ -41,18 +28,20 @@
     </div>
 
     <div class="botonesnavegacion">
-      <button class="button is-primary">Por Hacer</button>
-      <button class="button is-secondary">Haciendo</button>
-      <button class="button is-secondary">Completado</button>
+      <!-- <button class="button is-primary">Por Hacer</button>
+      <button class="button is-secondary">Haciendo</button> -->
+      <button class="button is-primary">Completado</button>
     </div>
   </div>
+
 </template>
 
 <script setup>
 import { ref } from "vue";
 import { useAuthStore } from "../store/auth";
 import { newTask } from "../supabase/index.js";
-import {useTaskStore} from "../store/task"
+import { useTaskStore } from "../store/task";
+
 
 const auth = useAuthStore();
 const taskStore = useTaskStore();
@@ -67,7 +56,7 @@ const onSubmit = async () => {
     user_id: auth.user.id,
   };
   await newTask(task);
-  taskStore.setTask()
+  taskStore.setTask();
 };
 
 const onClick = () => {
@@ -88,18 +77,21 @@ const onClick = () => {
   padding: 15px;
   margin: 20px;
   box-shadow: #00000080 0 14px 28px, #00000080 0 10px 10px;
-border-radius: 10px;
-transition: 300ms;
+  border-radius: 10px;
+  transition: 300ms;
 }
 
 .card:hover {
   transform: scale(1.1);
 }
+
 .card-header-title {
   color: blueviolet;
 }
+
 .botonesnavegacion {
   background-color: coral;
   margin: 50px;
 }
+
 </style>

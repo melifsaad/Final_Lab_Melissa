@@ -5,15 +5,17 @@
                 <div class="message-body">
                     Debes iniciar sesion para utilizar la aplicación
                 </div>
-                <router-link :to="{name: 'login'}">
+            </article>
+            <div class="buttonsInicio">
+        <router-link :to="{name: 'login'}">
                     <button class="button is-primary">Ingresar</button>
                 </router-link>
                 <router-link :to="{name: 'signup'}">
                     <button class="button is-secondary">Registrarse</button>
                 </router-link>
-            </article>
-            inicio
+            </div>
         </div>
+
     </div>
 </template>
 
@@ -26,6 +28,22 @@ console.log("inicio")
 <style scoped>
 .section {
     height: 100vh;
-    /* background-image: '../images/Gamevut elementos_background.png'; */
+}
+
+.container {
+    background-color: blue;
+    /* margin-top: 100px; */
+    /* display: flex; */
+flex-direction: column;
+}
+
+.message{
+    width: 700px;
+    text-align: center;
+}
+
+.buttonsInicio{
+    width: 700px;
+padding: 10px;
 }
 </style>

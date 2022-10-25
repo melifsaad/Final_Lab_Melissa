@@ -13,10 +13,9 @@ export const useTaskStore = defineStore("task", {
       console.log(this.tasks);
     },
 
-    async updateTask(id, taskEdit) {
-await updateTask(id);
-this.tasks = await getTasks();
-console.log("store", id, taskEdit)
+    async updateTask(taskId, title, description) {
+this.tasks = await updateTask(taskId, title, description);
+console.log("store", taskId, title, description)
     },
 
     async deleteTaskStore(id) {

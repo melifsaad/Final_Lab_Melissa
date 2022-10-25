@@ -6,7 +6,6 @@ export const useAuthStore = defineStore("auth", {
     user: {
       name:"Email usuario",
       id: "",
-      // password: "",
     },
 
   }),
