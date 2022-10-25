@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
     <div class="content">
-      <img :src="getimages('Gamevut logo footer.png')" width="100" height="100">
+      <img :src="getImage('Gamevut logo footer.png')" width="100" height="100">
       <router-link class="terminosycondiciones" :to="{ name: '' }">
         Terminos y condiciones
       </router-link>
