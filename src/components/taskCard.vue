@@ -1,6 +1,5 @@
 <template>
   <div class="sectiontaskCard">
-    <h2>Espacio de trabajo</h2>
     <button @click="onClick()" class="button is-secondary">Agregar</button>
     <div v-if="show" class="card">
       <header class="card-header">
@@ -54,9 +53,11 @@ const onSubmit = async () => {
     title: title.value,
     description: description.value,
     user_id: auth.user.id,
+    isCreated: false
   };
   await newTask(task);
   taskStore.setTask();
+  onClick()
 };
 
 const onClick = () => {

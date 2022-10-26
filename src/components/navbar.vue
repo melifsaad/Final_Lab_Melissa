@@ -6,7 +6,7 @@
                     Perfil
                 </a>
 
-                <div class="navbar-item has-dropdown is-hoverable">
+                <!-- <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link">
                         Espacio de trabajo
                     </a>
@@ -23,7 +23,7 @@
                             Tareas completadas
                         </a>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
 

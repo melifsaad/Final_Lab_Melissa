@@ -41,11 +41,19 @@ export const getTasks = async () => {
 };
 
 export const updateTask = async (taskId, title, description) => {
-  const { data, error } = await supabase
+  console.log(taskId, title, description,"prueba")
+  const response = await supabase
   .from("task")
-  .update(title, description)
+  .update({title, description})
   .eq("id", taskId);
-  console.log( data, error );
+  console.log(response);
+};
+
+export const completedTask = async(id, isCompleted) => {
+await supabase
+.from('task')
+.update({isCreated: isCompleted })
+.eq("id", id)
 };
 
 export const deleteTask = async (taskId) => {
@@ -53,7 +61,7 @@ export const deleteTask = async (taskId) => {
   .from("task")
   .delete()
   .eq("id", taskId);
-  console.log(response);
+  // console.log(response);
 };
 
 export const logOut = async () => {

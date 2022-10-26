@@ -13,10 +13,10 @@ export const useTaskStore = defineStore("task", {
       console.log(this.tasks);
     },
 
-    async updateTask(taskId, title, description) {
-this.tasks = await updateTask(taskId, title, description);
-console.log("store", taskId, title, description)
-    },
+//     async updateTask(taskId, title, description) {
+// this.tasks = await updateTask(taskId, title, description);
+// console.log("store", taskId, title, description)
+//     },
 
     async deleteTaskStore(id) {
       //Borra la tarea de deleteTask del supabase

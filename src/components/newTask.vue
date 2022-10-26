@@ -1,5 +1,5 @@
 <template>
-  <div v-if="showTask">
+  <div v-if="show">
     <div class="card">
       <header class="card-header">
         <p class="card-header-title">
@@ -16,61 +16,71 @@
       <footer class="card-footer">
         <button @click="onClickEdit" class="button">Edit</button>
         <button @click="onClickDelete" class="button is-primary">Delete</button>
-        <button class="button">Completado</button>
+        <button @click="onClickComplete" class="button">Completado</button>
       </footer>
     </div>
   </div>
 
-  <div v-else>
-    <form v-if="show" @submit.prevent="onSubmitEdit">
-      <div class="content">
-        <div class="field">
-          <div class="control">
-            <input v-model="title" class="input" type="text" placeholder="titulo" />
-            <textarea v-model="description" class="textarea" placeholder="Descripcion"></textarea>
-          </div>
-        </div>
-      </div>
+  <form v-else="show" @submit.prevent="onSubmitEdit(props.task.id)">
+    <div class="content">
       <div class="field">
         <div class="control">
-          <input class="button is-primary" type="submit" value="OK" />
+          <input
+            v-model="titleEdit"
+            class="input"
+            type="text"
+            placeholder="titulo"
+          />
+          <textarea
+            v-model="descriptionEdit"
+            class="textarea"
+            placeholder="Descripcion"
+          ></textarea>
         </div>
       </div>
-    </form>
-  </div>
-
+    </div>
+    <div class="field">
+      <div class="control">
+        <input class="button is-primary" type="submit" value="OK" />
+      </div>
+    </div>
+  </form>
 </template>
 
 <script setup>
 import { ref } from "vue";
-// import { useAuthStore } from "../store/auth";
-import { defineProps } from 'vue';
-import { useTaskStore } from '../store/task';
-import { updateTask } from "../supabase";
+import { defineProps } from "vue";
+import { useTaskStore } from "../store/task";
+import { updateTask, completedTask } from "../supabase";
 
-// const auth = useAuthStore();
 const taskStore = useTaskStore();
-const showTask = ref(true);
-const show = ref(false);
+const show = ref(true);
+const titleEdit = ref("");
+const descriptionEdit = ref("");
 
-const props = defineProps({ task: Object })
-console.log(props.task)
-
+const props = defineProps({ task: Object });
+console.log(props.task);
 
 const onClickDelete = () => {
-  taskStore.deleteTaskStore(props.task.id)
-  console.log(props.task.id)
-}
+  taskStore.deleteTaskStore(props.task.id);
+  console.log(props.task.id);
+};
 
 const onClickEdit = () => {
   show.value = !show.value;
-}
-
-const onSubmitEdit = async () => {
-  await updateTask(taskId, title.value, description.value);
-  console.log(props.task.id)
 };
 
+const onSubmitEdit = async (id) => {
+  await updateTask(id, titleEdit.value, descriptionEdit.value);
+  await taskStore.setTask();
+};
+
+const isCompleted = ref();
+
+const onClickComplete = async () => {
+  isCompleted.value = !isCompleted.value;
+  await completedTask(props.task.id, isCompleted.value);
+};
 </script>
 
 <style scoped>
