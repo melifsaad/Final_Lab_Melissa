@@ -1,7 +1,6 @@
 <template>
   <div class="section">
     <div class="container">
-      <h1>!Hola!</h1>
       <form @submit.prevent="onSubmit">
         <div class="field">
           <label class="label">Email</label>
@@ -30,14 +29,9 @@
             <input
               class="button is-primary"
               type="submit"
-              placeholder="Ingresar"
+              value="Ingresar"
             />
           </div>
-        </div>
-        <div class="olvidoContraseña">
-          <router-link :to="{ name: '' }">
-            No recuerdo mi contraseña
-          </router-link>
         </div>
       </form>
     </div>
@@ -70,4 +64,8 @@ const onSubmit = async () => {
 </script>
 
 <style scoped>
+.container{
+  box-shadow: #00000080 0 14px 28px, #00000080 0 10px 10px;
+  border-radius: 10px;
+}
 </style>

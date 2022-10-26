@@ -14,9 +14,11 @@
       </div>
 
       <footer class="card-footer">
-        <button @click="onClickEdit" class="button">Edit</button>
+        <button @click="onClick" class="button">Edit</button>
         <button @click="onClickDelete" class="button is-primary">Delete</button>
-        <button @click="onClickComplete" class="button">Completado</button>
+        <router-link :to="{name: completed}">
+          <button @click="onClickComplete" class="button">Completado</button>
+        </router-link>
       </footer>
     </div>
   </div>
@@ -66,13 +68,14 @@ const onClickDelete = () => {
   console.log(props.task.id);
 };
 
-const onClickEdit = () => {
+const onClick = () => {
   show.value = !show.value;
 };
 
 const onSubmitEdit = async (id) => {
   await updateTask(id, titleEdit.value, descriptionEdit.value);
   await taskStore.setTask();
+  onClick()
 };
 
 const isCompleted = ref();
@@ -81,6 +84,10 @@ const onClickComplete = async () => {
   isCompleted.value = !isCompleted.value;
   await completedTask(props.task.id, isCompleted.value);
 };
+
+// const showComplited = () => {
+//   show.value = !show.value;
+// };
 </script>
 
 <style scoped>

@@ -21,15 +21,15 @@ import {getImage} from "../helpers/images"
 <style scoped>
 .footer {
   background-color: #12A19A;
-  height: 120px;
-  padding: 15px;
+  padding: 0px;
 }
 
 .content {
-  background-color: rgb(0, 58, 96);
-  height: 100px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 
 .terminosycondiciones {
