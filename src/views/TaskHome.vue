@@ -70,4 +70,11 @@ onMounted(async () => {
   justify-content: center;
   align-items: center;
 }
+.botonesnavegacion {
+  background-color: coral;
+  width: 300px;
+  margin: 50px;
+  display: flex;
+  justify-content: space-between;
+}
 </style>

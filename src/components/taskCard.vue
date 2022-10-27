@@ -1,7 +1,8 @@
 <template>
-  <div class="sectiontaskCard">
+  <div class="section">
+  <div class="sectionTaskCard">
     <div class="claseBoton">
-      <button @click="onClick()" class="button is-secondary is-link">Agregar</button>
+      <button @click="onClick()" class="button is-secondary is-large is-link is-responsive">Agregar</button>
     </div>
     <div v-if="show" class="card">
       <header class="card-header">
@@ -28,7 +29,7 @@
       </form>
     </div>
   </div>
-
+</div>
 </template>
 
 <script setup>
@@ -64,13 +65,12 @@ const onClick = () => {
 </script>
 
 <style scoped>
-.sectiontaskCard {
+.sectionTaskCard{
   display: flex;
   justify-content: center;
   flex-direction: column;
   margin-top: 20px;
 }
-
 .card {
   width: 400px;
   padding: 15px;
@@ -83,14 +83,8 @@ const onClick = () => {
 .card:hover {
   transform: scale(1.1);
 }
-
 .card-header-title {
   color: blueviolet;
-}
-
-.botonesnavegacion {
-  background-color: coral;
-  margin: 50px;
 }
 .claseBoton{
   margin: auto;

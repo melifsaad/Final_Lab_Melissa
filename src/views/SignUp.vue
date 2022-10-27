@@ -36,9 +36,9 @@
             />
           </div>
         </div>
-        <div class="texto"
-          >Use 8 carácteres mínimo con una mezcla de letras, números y
-          símbolos.</div>
+        <div class="texto">
+          Use 8 carácteres mínimo con una mezcla de letras, números y símbolos.
+        </div>
         <div class="field">
           <div class="control">
             <input
@@ -50,18 +50,18 @@
           </div>
         </div>
         <div class="botones">
-        <div class="field">
-          <div class="control">
-            <input
-              class="button is-secondary is-link"
-              type="submit"
-              value="Registrarse"
-            />
-            <span>o</span>
-            <router-link :to="{ name: 'login' }">
-              <button class="button is-primary">cancelar</button>
-            </router-link>
-        </div>
+          <div class="field">
+            <div class="control">
+              <input
+                class="button is-secondary is-link"
+                type="submit"
+                value="Registrarse"
+              />
+              <span>o</span>
+              <router-link :to="{ name: 'login' }">
+                <button class="button is-primary p-">cancelar</button>
+              </router-link>
+            </div>
           </div>
         </div>
       </form>
@@ -104,16 +104,16 @@ const onSubmit = () => {
   font-size: 38px;
   padding-right: 10px;
 }
-.texto{
-    color:#818181;
-    font-style: italic;
-    font-weight:lighter;
-    padding-bottom: 10px;
+.texto {
+  color: #818181;
+  font-style: italic;
+  font-weight: lighter;
+  padding-bottom: 10px;
 }
 
-.botones{
-    display: flex;
-    justify-content:space-around;
-    background-color: blueviolet;
+.botones {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 25px;
 }
 </style>

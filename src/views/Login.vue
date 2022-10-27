@@ -28,7 +28,7 @@
         <div class="field">
           <div class="control">
             <input
-              class="button is-primary"
+              class="button is-primary is-flex m-auto"
               type="submit"
               value="Ingresar"
             />
@@ -61,7 +61,6 @@ const onSubmit = async () => {
         alert(id.error)
     }}
 
-
 </script>
 
 <style scoped>
@@ -69,7 +68,6 @@ const onSubmit = async () => {
   height: 100vh;
 }
 .container{
-  background-color: blueviolet;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -77,5 +75,8 @@ const onSubmit = async () => {
 }
 .titulo{
   text-align: center ;
+}
+.control{
+  width: 400px;
 }
 </style>
