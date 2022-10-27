@@ -53,7 +53,7 @@
           <div class="field">
             <div class="control">
               <input
-                class="button is-secondary is-link"
+                class="button is-primary"
                 type="submit"
                 value="Registrarse"
               />
