@@ -5,8 +5,8 @@
     <taskCard />
 
     <div class="botonesnavegacion">
-      <button @click="filtro = 'todo'" class="button is-primary">Todo</button>
-      <button @click="filtro = 'porhacer'" class="button is-primary">
+      <button @click="filtro = 'todo'" class="button">Todo</button>
+      <button @click="filtro = 'porhacer'" class="button">
         Por Hacer
       </button>
       <button @click="filtro = 'completado'" class="button is-primary">
@@ -63,7 +63,6 @@ onMounted(async () => {
   margin: 20px;
   display: flex;
   justify-content: center;
-  color: #167275;
 }
 
 .loadingContainer {

@@ -1,6 +1,8 @@
 <template>
   <div class="sectiontaskCard">
-    <button @click="onClick()" class="button is-secondary">Agregar</button>
+    <div class="claseBoton">
+      <button @click="onClick()" class="button is-secondary is-link">Agregar</button>
+    </div>
     <div v-if="show" class="card">
       <header class="card-header">
         <p class="card-header-title">Tarea</p>
@@ -89,6 +91,9 @@ const onClick = () => {
 .botonesnavegacion {
   background-color: coral;
   margin: 50px;
+}
+.claseBoton{
+  margin: auto;
 }
 
 </style>

@@ -2,28 +2,24 @@
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
-                <a class="navbar-item">
-                    Perfil
-                </a>
-
-                <!-- <div class="navbar-item has-dropdown is-hoverable">
+                <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link">
                         Espacio de trabajo
                     </a>
 
                     <div class="navbar-dropdown">
                         <a class="navbar-item">
-                            Tareas por hacer
+                            Todo
                         </a>
                         <a class="navbar-item">
-                            Haciendo
+                            Por hacer
                         </a>
                         <hr class="navbar-divider">
                         <a class="navbar-item">
-                            Tareas completadas
+                            Completado
                         </a>
                     </div>
-                </div> -->
+                </div>
             </div>
         </div>
 

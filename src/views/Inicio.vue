@@ -11,13 +11,13 @@
         <router-link :to="{ name: 'login' }">
           <button class="button is-primary">Ingresar</button>
         </router-link>
-        <div class="olvidoContrasena">
-          <router-link :to="{ name: 'recuperarContrasena' }">
+        <div class="contenedorResetPass">
+          <router-link class="olvidoContrasena" :to="{ name: 'recuperarContrasena' }">
             No recuerdo mi contraseña
           </router-link>
         </div>
         <router-link :to="{ name: 'signup' }">
-          <button class="button is-secondary">Registrarse</button>
+          <button class="button is-secondary is-link">Registrarse</button>
         </router-link>
       </div>
     </div>
@@ -60,8 +60,11 @@ text-align: center;
 }
 
 .olvidoContrasena{
-    margin: 25px;
     font-style: italic;
-    /* color:#F65420 !important; */
+    color:
+    #F65420 !important;
+}
+.contenedorResetPass{
+    margin: 20px;
 }
 </style>

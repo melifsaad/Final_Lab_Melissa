@@ -17,11 +17,6 @@ const routes = [
     component: () => import("../views/SignUp.vue")
   },
   {
-    path: "/verificacion",
-    name: "verificacion",
-    component: () => import("../views/Verificacion.vue")
-  },
-  {
     path: "/task",
     name: "task",
     component: () => import("../views/TaskHome.vue")
@@ -32,9 +27,14 @@ const routes = [
     component: () => import("../views/RecuperarContrasena.vue")
   },
   {
-    path: "/reviarContraseña",
-    name: "revisarContraseña",
+    path: "/revisarCorreo",
+    name: "revisarCorreo",
     component: () => import("../views/RevisarCorreo.vue")
+  },
+  {
+    path: "/restabelcerContrasena",
+    name: "restabelcerContrasena",
+    component: () => import("../views/RestablecerContrasena.vue")
   },
 ]
 

@@ -17,6 +17,7 @@ onMounted (async () => {
  if (!authStore.isAuth)
  router.push({name:"inicio"})
  else router.push({name:"task"})
+//  if else router ({})
 })
 
 </script>

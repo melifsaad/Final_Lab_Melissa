@@ -73,7 +73,7 @@ export const logOut = async () => {
 };
 
 export const recuperarMail = async (email) => {
-  let { data, error } = await supabase.auth.resetPasswordForEmail(email)
+  const { data, error } = await supabase.auth.resetPasswordForEmail(email)
   console.log(error)
   return error
 };

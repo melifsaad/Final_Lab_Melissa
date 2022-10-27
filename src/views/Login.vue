@@ -1,9 +1,11 @@
 <template>
   <div class="section">
+    <div class="titulo">
+      <h1 class="title">Entrar</h1>
+    </div>
     <div class="container">
       <form @submit.prevent="onSubmit">
         <div class="field">
-          <label class="label">Email</label>
           <div class="control">
             <input
               v-model="email"
@@ -14,7 +16,6 @@
           </div>
         </div>
         <div class="field">
-          <label class="label">Contraseña</label>
           <div class="control">
             <input
               v-model="password"
@@ -68,7 +69,13 @@ const onSubmit = async () => {
   height: 100vh;
 }
 .container{
-  box-shadow: #00000080 0 14px 28px, #00000080 0 10px 10px;
-  border-radius: 10px;
+  background-color: blueviolet;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+.titulo{
+  text-align: center ;
 }
 </style>

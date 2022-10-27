@@ -14,10 +14,10 @@
       </div>
 
       <footer class="card-footer">
-        <button @click="onClick" class="button">Edit</button>
-        <button @click="onClickDelete" class="button is-primary">Delete</button>
+        <button @click="onClick" class="button is-secondary is-link">Edit</button>
+        <button @click="onClickDelete" class="button">Delete</button>
         <router-link :to="{name: completed}">
-          <button @click="onClickComplete" class="button">Completado</button>
+          <button @click="onClickComplete" class="button is-primary">Completado</button>
         </router-link>
       </footer>
     </div>

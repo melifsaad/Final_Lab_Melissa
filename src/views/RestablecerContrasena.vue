@@ -36,6 +36,18 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+</script>
 
-<style scoped></style>
+<style scoped>
+
+.titulo{
+display: flex;
+align-items: center;
+padding: 20px;
+}
+.titleBlack{
+    font-weight: bolder;
+font-size: 38px;
+padding-right: 10px;
+}</style>
