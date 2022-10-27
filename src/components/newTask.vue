@@ -1,4 +1,5 @@
 <template>
+  <div class="section">
   <div v-if="show">
     <div class="card">
       <header class="card-header">
@@ -47,6 +48,7 @@
       </div>
     </div>
   </form>
+</div>
 </template>
 
 <script setup>
@@ -89,19 +91,18 @@ const onClickComplete = async () => {
 </script>
 
 <style scoped>
+.section{
+padding: 0px;
+}
 .card {
-  width: 400px;
+  width: 300px;
   padding: 15px;
   margin: 50px;
   box-shadow: #00000080 0 14px 28px, #00000080 0 10px 10px;
   border-radius: 10px;
+  transition: 300ms;
 }
-
-.card-footer-item {
-  color: white;
-}
-
-.editTitle {
-  background-color: blue;
+.card:hover {
+    transform: scale(1.1);
 }
 </style>

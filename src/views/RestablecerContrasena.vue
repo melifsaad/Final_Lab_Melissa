@@ -37,7 +37,7 @@
                 type="submit"
                 value="Restablecer"
               />
-              <span>o</span>
+              <span class="separation">o</span>
               <router-link :to="{ name: 'login' }">
                 <button class="button">cancelar</button>
               </router-link>
@@ -94,6 +94,9 @@ const onSubmit = async () => {
   font-style: italic;
   font-weight: lighter;
   padding-bottom: 10px;
+}
+.separation{
+  padding: 15px;
 }
 .botones {
   display: flex;

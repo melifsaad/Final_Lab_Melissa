@@ -24,7 +24,7 @@ const routes = [
   {
     path: "/recuperarContrasena",
     name: "recuperarContrasena",
-    component: () => import("../views/RecuperarContrasena.vue")
+    component: () => import("../views/OlvidarContrasena.vue")
   },
   {
     path: "/revisarCorreo",
@@ -32,8 +32,8 @@ const routes = [
     component: () => import("../views/RevisarCorreo.vue")
   },
   {
-    path: "/restabelcerContrasena",
-    name: "restabelcerContrasena",
+    path: "/restablecerContrasena",
+    name: "restablecerContrasena",
     component: () => import("../views/RestablecerContrasena.vue")
   },
 ]

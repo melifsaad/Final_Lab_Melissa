@@ -2,26 +2,26 @@
   <div class="section">
   <div class="sectionTaskCard">
     <div class="claseBoton">
-      <button @click="onClick()" class="button is-secondary is-large is-link is-responsive">Agregar</button>
+      <button @click="onClick()" class="button is-secondary is-medium is-link">Agregar</button>
     </div>
-    <div v-if="show" class="card">
+    <div v-if="show" class="card is-responsive">
       <header class="card-header">
-        <p class="card-header-title">Tarea</p>
+        <p class="card-header-title is-uppercase has-text-centered">tarea</p>
       </header>
 
       <form @submit.prevent="onSubmit">
         <div class="content">
           <div class="field">
             <div class="control">
-              <input v-model="title" class="input" type="text" placeholder="titulo" />
+              <input v-model="title" class="input" type="text" placeholder="Titulo" />
               <textarea v-model="description" class="textarea" placeholder="Descripcion"></textarea>
             </div>
           </div>
         </div>
         <div class="field">
           <div class="control">
-            <input class="button is-primary" type="submit" value="Agregar Tarea" />
-            <button @click="onClick()" class="button is-secondary">
+            <input class="button is-secondary is-link mr-4" type="submit" value="Agregar Tarea" />
+            <button @click="onClick()" class="button">
               Cancelar
             </button>
           </div>
@@ -84,7 +84,8 @@ const onClick = () => {
   transform: scale(1.1);
 }
 .card-header-title {
-  color: blueviolet;
+  color:#686868;
+  text-align: center;
 }
 .claseBoton{
   margin: auto;

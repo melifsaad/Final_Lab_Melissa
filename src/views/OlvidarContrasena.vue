@@ -71,10 +71,8 @@ const onSubmit = async () => {
 .texto {
   color: #818181;
   width: 400px;
-  padding: 20px;
 }
 .container {
-  padding: 0px;
   display: flex;
   align-items: center;
 }

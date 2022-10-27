@@ -39,9 +39,8 @@
   padding-right: 10px;
 }
 .texto {
-    background-color: blueviolet;
   color: #818181;
-  width: 400px;
-  margin: 20px, 0px, 20px, 0px;
+  width: 500px;
+  padding-bottom: 40px;
 }
 </style>

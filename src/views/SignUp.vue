@@ -45,7 +45,7 @@
               v-model="phone"
               class="input"
               type="tel"
-              placeholder="móvil"
+              placeholder="Móvil"
             />
           </div>
         </div>
@@ -57,9 +57,9 @@
                 type="submit"
                 value="Registrarse"
               />
-              <span>o</span>
+              <span class="separation">o</span>
               <router-link :to="{ name: 'login' }">
-                <button class="button is-primary p-">cancelar</button>
+                <button class="button">Cancelar</button>
               </router-link>
             </div>
           </div>
@@ -114,6 +114,15 @@ const onSubmit = () => {
 .botones {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   padding-top: 25px;
+}
+
+h3 {
+  padding: 10px;
+  text-align: center;
+}
+.separation{
+  padding: 15px;
 }
 </style>

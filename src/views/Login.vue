@@ -28,7 +28,7 @@
         <div class="field">
           <div class="control">
             <input
-              class="button is-primary is-flex m-auto"
+              class="button is-secondary is-link is-flex m-auto"
               type="submit"
               value="Ingresar"
             />
