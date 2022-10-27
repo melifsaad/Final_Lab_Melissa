@@ -1,14 +1,15 @@
 @charset "utf-8";
-@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Roboto:wght@100;500&display=swap');
-body{
-    font-family: 'Roboto', sans-serif !important;
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Roboto:wght@100;500&display=swap");
+body {
+  font-family: "Roboto", sans-serif !important;
+  background-color: #f8f8f8;
 }
 
-$primary: #F65420;
-$secondary: #4C9A91;
+$primary: #f65420;
+$secondary: #4c9a91;
 $secondary-invert: findColorInvert($secondary);
 $title-color: $primary;
-$title-weight:800;
+$title-weight: 800;
 
 // $linkedin: #0077b5;
 // $linkedin-invert: findColorInvert($linkedin);
@@ -16,9 +17,12 @@ $title-weight:800;
 // $github-invert: findColorInvert($github);
 
 $addColors: (
-  "secondary":($secondary, $secondary-invert),
-//   "linkedin": ($linkedin, $linkedin-invert),
-//   "github": ($github, $github-invert)
+  "secondary": (
+    $secondary,
+    $secondary-invert,
+  ),
+  //   "linkedin": ($linkedin, $linkedin-invert),
+  //   "github": ($github, $github-invert),
 );
 @import "../node_modules/bulma/sass/utilities/derived-variables";
 $colors: map-merge($colors, $addColors);
@@ -35,4 +39,3 @@ $colors: map-merge($colors, $addColors);
 @import "bulma/bulma.sass";
 
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
-

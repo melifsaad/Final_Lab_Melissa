@@ -64,6 +64,9 @@ const onSubmit = async () => {
 </script>
 
 <style scoped>
+.section{
+  height: 100vh;
+}
 .container{
   box-shadow: #00000080 0 14px 28px, #00000080 0 10px 10px;
   border-radius: 10px;

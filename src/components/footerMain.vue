@@ -29,7 +29,7 @@ import {getImage} from "../helpers/images"
   justify-content: space-between;
   align-items: center;
   padding-right: 20px;
-  padding-left: 20px;
+  padding-left: 0px;
 }
 
 .terminosycondiciones {

@@ -25,12 +25,6 @@
         </div>
       </form>
     </div>
-
-    <div class="botonesnavegacion">
-      <!-- <button class="button is-primary">Por Hacer</button>
-      <button class="button is-secondary">Haciendo</button> -->
-      <button class="button is-primary">Completado</button>
-    </div>
   </div>
 
 </template>
@@ -56,6 +50,8 @@ const onSubmit = async () => {
     isCreated: false
   };
   await newTask(task);
+  title.value=null
+  description.value=null
   taskStore.setTask();
   onClick()
 };

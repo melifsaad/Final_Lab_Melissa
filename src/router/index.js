@@ -27,9 +27,14 @@ const routes = [
     component: () => import("../views/TaskHome.vue")
   },
   {
-    path: "/completed",
-    name: "completed",
-    component: () => import("../components/completed.vue")
+    path: "/recuperarContrasena",
+    name: "recuperarContrasena",
+    component: () => import("../views/RecuperarContrasena.vue")
+  },
+  {
+    path: "/reviarContraseña",
+    name: "revisarContraseña",
+    component: () => import("../views/RevisarCorreo.vue")
   },
 ]
 

@@ -83,11 +83,9 @@ const isCompleted = ref();
 const onClickComplete = async () => {
   isCompleted.value = !isCompleted.value;
   await completedTask(props.task.id, isCompleted.value);
+  await taskStore.setTask();
 };
 
-// const showComplited = () => {
-//   show.value = !show.value;
-// };
 </script>
 
 <style scoped>

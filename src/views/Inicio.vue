@@ -11,8 +11,8 @@
         <router-link :to="{ name: 'login' }">
           <button class="button is-primary">Ingresar</button>
         </router-link>
-        <div class="olvidoContraseña">
-          <router-link :to="{ name: '' }">
+        <div class="olvidoContrasena">
+          <router-link :to="{ name: 'recuperarContrasena' }">
             No recuerdo mi contraseña
           </router-link>
         </div>
@@ -31,18 +31,14 @@ console.log("inicio");
 </script>
 
 <style scoped>
-/* h1{
-    font-weight: bolder;
-   color:#F65420;
-   font-size: 48px;
+h1{
 text-align: center;
-} */
+}
 .section {
   height: 100vh;
 }
 
 .container {
-  background-color: blue;
   /* margin-top: 100px; */
   display: flex;
   flex-direction: column;
@@ -55,12 +51,17 @@ text-align: center;
 }
 
 .buttonsInicio {
-  background-color: rgb(30, 134, 40);
   width: 700px;
   padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.olvidoContrasena{
+    margin: 25px;
+    font-style: italic;
+    /* color:#F65420 !important; */
 }
 </style>
